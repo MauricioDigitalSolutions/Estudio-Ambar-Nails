@@ -1,0 +1,474 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Presentación Digital - Estudio Ámbar Nail</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #2d3748; /* Fondo oscuro elegante para la vista desktop */
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .mobile-scroll {
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-y: contain;
+        }
+        .banner-clip {
+            clip-path: ellipse(100% 60% at 50% 40%);
+        }
+        .icon-link {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .icon-link:hover {
+            background-color: rgba(255, 255, 255, 0.35);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .icon-link:active {
+            transform: translateY(0);
+        }
+        /* Estilos para los modales */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 50;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(6px);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 360px;
+            border-radius: 1.5rem;
+            text-align: center;
+            animation: fadeIn 0.3s ease-out forwards;
+            position: relative;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .services-modal-content {
+            background-color: #f9fafb;
+            max-width: 400px;
+            border-radius: 1.5rem;
+            padding: 0;
+            overflow: hidden;
+            text-align: left;
+            border: 2px solid #a0635f;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.1)
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.92);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .close-button {
+            color: #6b7280;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            border-radius: 9999px;
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.2s ease-in-out;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            background-color: #d1d5db;
+            color: #111827;
+            transform: rotate(90deg);
+        }
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="min-h-screen sm:flex sm:items-center sm:justify-center p-0 sm:p-4 select-none">
+
+    <!-- Contenedor principal de la tarjeta digital -->
+    <div class="card-container w-full h-screen sm:max-w-[400px] sm:h-[812px] sm:rounded-3xl sm:shadow-2xl mx-auto bg-gradient-to-b from-[#b27976] to-[#8c524e] overflow-hidden relative border-0 sm:border-4 sm:border-white/20">
+        
+        <div class="absolute top-0 left-0 w-full h-full overflow-y-auto mobile-scroll">
+            
+            <!-- Sección del banner superior con recorte arqueado -->
+            <div class="h-2/5 relative">
+                <img src="https://placehold.co/1000x600/4682B4/4682B4?text=" 
+                     alt="[Banner Azul Acero]" 
+                     class="w-full h-full object-cover banner-clip bg-[#4682B4]"
+                     onerror="this.onerror=null;this.src='https://placehold.co/1000x600/4682B4/4682B4?text=';">
+                
+                <div class="absolute top-8 left-0 right-0 text-center text-white text-shadow px-4">
+                    <!-- Logo / Icono Superior con eliminación de fondo mediante modo de mezcla CSS -->
+                    <img src="https://i.postimg.cc/xCCmLtNz/imagen-2026-07-25-181046936.png" 
+                         alt="Logo Estudio Ambar Nails" 
+                         class="max-h-14 w-auto mx-auto object-contain drop-shadow-lg mix-blend-multiply filter contrast-110"
+                         style="mix-blend-mode: multiply;"
+                         onerror="this.onerror=null;this.src='https://placehold.co/80x80/transparent/ffffff?text=Logo';">
+                    <h1 class="font-playfair text-2xl mt-2 tracking-wider font-bold">ESTUDIO ÁMBAR NAILS</h1>
+                    <p class="text-xs tracking-widest opacity-90 mt-1 uppercase font-medium">Manicura & Pedicura Especializada</p>
+                </div>
+            </div>
+
+            <!-- Contenido principal interactivo -->
+            <div class="relative px-6 -mt-28 pb-8">
+                <div class="flex justify-center">
+                    <!-- Contenedor foto de perfil con insignia de verificación -->
+                    <div class="relative">
+                        <img src="https://i.postimg.cc/7LzMfB72/imagen-2026-07-25-173940968.png" 
+                             alt="[Dra. Amanda Méndez]" 
+                             class="w-28 h-28 rounded-full object-cover border-4 border-white shadow-xl"
+                             onerror="this.onerror=null;this.src='https://placehold.co/112x112/4682B4/FFFFFF?text=Dra.+Amanda';">
+                        
+                        <!-- Insignia de verificación -->
+                        <div class="absolute bottom-1 right-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-blue-500 bg-white rounded-full p-0.5 border-2 border-white shadow-md">
+                                <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12c0 1.357-.6 2.573-1.549 3.397a4.49 4.49 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.491 4.491 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4 text-white text-shadow">
+                    <h2 class="text-2xl font-bold tracking-tight">Nail Artist: Adiyaman Calderón</h2>
+                    <p class="mt-1 text-sm opacity-90 leading-snug">Soft gel • Builder gel • Hibrida<br>Acrilico • Más</p>
+                </div>
+                
+                <!-- Rejilla de botones interactivos -->
+                <div class="grid grid-cols-3 gap-3.5 mt-6 text-center text-white">
+                    <!-- Botón Servicios -->
+                    <button id="servicesBtn" class="icon-link rounded-2xl p-3 flex flex-col items-center justify-center space-y-1.5 shadow-sm" aria-label="Ver servicios">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-1.125 0-2.062.938-2.062 2.063v7.5c0 1.125.937 2.063 2.063 2.063h7.5c1.125 0 2.063-.938 2.063-2.063v-7.5c0-1.125-.938-2.063-2.063-2.063H8.25z"></path></svg>
+                        <span class="text-xs font-semibold">Servicios</span>
+                    </button>
+
+                    <!-- Botón Llamada -->
+                    <a href="tel:+524433945792" class="icon-link rounded-2xl p-3 flex flex-col items-center justify-center space-y-1.5 shadow-sm" aria-label="Llamar por teléfono">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <span class="text-xs font-semibold">Llamada</span>
+                    </a>
+
+                    <!-- Botón WhatsApp -->
+                    <a href="https://wa.me/4433945792
+                " target="_blank" rel="noopener noreferrer" class="icon-link rounded-2xl p-3 flex flex-col items-center justify-center space-y-1.5 shadow-sm" aria-label="Enviar WhatsApp">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.296-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        <span class="text-xs font-semibold">WhatsApp</span>
+                    </a>
+
+                    <!-- Botón Instagram -->
+                    <a href="https://www.instagram.com/estudioambar_nails?igsh=MW5tMnEzb2Q4N2lqdQ==" target="_blank" rel="noopener noreferrer" class="icon-link rounded-2xl p-3 flex flex-col items-center justify-center space-y-1.5 shadow-sm" aria-label="Perfil de Instagram @estudioambar_nails">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" xmlns="https://www.instagram.com/estudioambar_nails?igsh=MW5tMnEzb2Q4N2lqdQ=="><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <span class="text-xs font-semibold">Instagram</span>
+                    </a>
+
+                    <!-- Botón TikTok -->
+                    <a href="https://www.tiktok.com/@estudioambar_nails?_r=1&_t=ZS-98LJv8LlUnd" target="_blank" rel="noopener noreferrer" class="icon-link rounded-2xl p-3 flex flex-col items-center justify-center space-y-1.5 shadow-sm" aria-label="Perfil de TikTok">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.77 0 2.89 2.89 0 0 1 2.89-2.89c.35 0 .69.05 1.01.16V9.28a6.34 6.34 0 0 0-4.04-1.22c-3.53 0-6.4 2.87-6.4 6.4s2.87 6.4 6.4 6.4 6.4-2.87 6.4-6.4V7.65a8.49 8.49 0 0 0 4.67 1.36V5.44a4.95 4.95 0 0 1-1.63-.3z"/></svg>
+                        <span class="text-xs font-semibold">TikTok</span>
+                    </a>
+
+                    <!-- Botón Ubicación -->
+                    <a href="https://maps.app.goo.gl/o2Mn5LXvompqVCrMA" target="_blank" rel="noopener noreferrer" class="icon-link rounded-2xl p-3 flex flex-col items-center justify-center space-y-1.5 shadow-sm" aria-label="Ubicación en mapa">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span class="text-xs font-semibold">Ubicación</span>
+                    </a>
+
+                    <!-- Botón Guardar Contacto -->
+                    <a id="saveContact" href="#" class="icon-link rounded-2xl p-3 flex flex-col items-center justify-center space-y-1.5 shadow-sm" aria-label="Guardar contacto vCard">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.5 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" /></svg>
+                        <span class="text-xs font-semibold">Guardar</span>
+                    </a>
+
+                    <!-- Botón Código QR -->
+                    <button id="shareBtn" class="icon-link rounded-2xl p-3 flex flex-col items-center justify-center space-y-1.5 shadow-sm" aria-label="Mostrar Código QR">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.875c0-1.036.84-1.875 1.875-1.875h4.5c1.036 0 1.875.84 1.875 1.875v4.5c0 1.036-.84 1.875-1.875 1.875h-4.5A1.875 1.875 0 013.75 9.375v-4.5zM3.75 14.625c0-1.036.84-1.875 1.875-1.875h4.5c1.036 0 1.875.84 1.875 1.875v4.5c0 1.036-.84 1.875-1.875 1.875h-4.5a1.875 1.875 0 01-1.875-1.875v-4.5zM13.5 4.875c0-1.036.84-1.875 1.875-1.875h4.5c1.036 0 1.875.84 1.875 1.875v4.5c0 1.036-.84 1.875-1.875 1.875h-4.5A1.875 1.875 0 0113.5 9.375v-4.5zM13.5 14.625c0-1.036.84-1.875 1.875-1.875h4.5c1.036 0 1.875.84 1.875 1.875v4.5c0 1.036-.84 1.875-1.875 1.875h-4.5a1.875 1.875 0 01-1.875-1.875v-4.5z" /></svg>
+                        <span class="text-xs font-semibold">Código QR</span>
+                    </button>
+                
+                <!-- Enlace interactivo para guía de instalación -->
+                <div class="mt-8 text-center pb-2">
+                    <button id="installTextBtn" class="text-white text-xs sm:text-sm underline opacity-90 hover:opacity-100 transition-opacity tracking-wide font-medium">
+                        ¿Cómo instalar en mi móvil?
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 1: Compartir / Código QR -->
+    <div id="qrModal" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-content p-0 overflow-hidden border-2 border-[#a0635f]">
+            <span class="close-button" id="closeQrModal" aria-label="Cerrar modal">&times;</span>
+            <div class="p-6 bg-gradient-to-b from-[#f3e6e5] to-white">
+                <h3 class="text-2xl font-bold text-[#6a3f3c] text-center font-playfair px-6">Comparte esta Tarjeta</h3>
+            </div>
+            <div class="p-6 pt-2 text-center">
+                <img id="qrCode" src="" alt="[Código QR para escanear tarjeta]" class="mx-auto mb-4 p-2 bg-white border-4 border-[#e7c6c4] rounded-2xl shadow-md w-48 h-48 object-contain">
+                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed font-medium">Escanea el código QR con la cámara de tu teléfono para abrir la tarjeta en otro dispositivo.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Instrucciones de Instalación App Mobile -->
+    <div id="installModal" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-content p-0 overflow-hidden border-2 border-[#4682B4]">
+            <span class="close-button" id="closeInstallModal" aria-label="Cerrar modal">&times;</span>
+            <div class="p-6 bg-gradient-to-b from-[#e0eaf3] to-white">
+                <h3 class="text-2xl font-bold text-[#4682B4] text-center font-playfair px-6">Acceso Directo en tu Móvil</h3>
+                <p class="text-center text-gray-600 mt-2 text-xs sm:text-sm">¡Ten mis datos siempre a mano! Sigue estos simples pasos:</p>
+            </div>
+            <div class="p-6 text-left text-xs sm:text-sm text-gray-700 space-y-6">
+                <!-- iOS Safari -->
+                <div class="bg-gray-50 p-3.5 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-sm text-[#4682B4] flex items-center">
+                        <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.32c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 .6-2.64 1.35-.57.67-.97 1.74-.84 2.78 1.02.08 2.05-.53 2.56-1.28z"/></svg>
+                        Para iPhone (Safari)
+                    </h4>
+                    <p class="mt-2.5 flex items-center">
+                        <span class="bg-[#d0e0ed] text-[#4682B4] font-bold rounded-full w-5 h-5 text-xs flex items-center justify-center mr-2.5 shrink-0">1</span>
+                        Toca el ícono de 
+                        <span class="font-semibold text-[#4682B4] inline-flex items-center ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                            Compartir
+                        </span>.
+                    </p>
+                    <p class="mt-2 flex items-center">
+                         <span class="bg-[#d0e0ed] text-[#4682B4] font-bold rounded-full w-5 h-5 text-xs flex items-center justify-center mr-2.5 shrink-0">2</span>
+                        <span>Busca y selecciona <b class="font-semibold text-[#4682B4]">"Agregar a inicio"</b>.</span>
+                    </p>
+                </div>
+                <!-- Android Chrome -->
+                <div class="bg-gray-50 p-3.5 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-sm text-[#4682B4] flex items-center">
+                        <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16z"/></svg>
+                        Para Android (Chrome)
+                    </h4>
+                    <p class="mt-2.5 flex items-center">
+                         <span class="bg-[#d0e0ed] text-[#4682B4] font-bold rounded-full w-5 h-5 text-xs flex items-center justify-center mr-2.5 shrink-0">1</span>
+                        Toca el menú de 
+                         <span class="font-semibold text-[#4682B4] inline-flex items-center ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-0.5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path></svg>
+                            tres puntos
+                        </span>.
+                    </p>
+                    <p class="mt-2 flex items-center">
+                         <span class="bg-[#d0e0ed] text-[#4682B4] font-bold rounded-full w-5 h-5 text-xs flex items-center justify-center mr-2.5 shrink-0">2</span>
+                        <span>Elige <b class="font-semibold text-[#4682B4]">"Instalar aplicación"</b>.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Catálogo de Servicios (Mini Landing) -->
+    <div id="servicesModal" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-content services-modal-content relative">
+            <span class="close-button" id="closeServicesModal" aria-label="Cerrar modal">&times;</span>
+            <div class="p-5 bg-gradient-to-b from-[#f3e6e5] to-white border-b">
+                 <h2 class="text-2xl font-bold text-[#6a3f3c] text-center font-playfair px-6">Nuestros Servicios</h2>
+                 <p class="text-center text-gray-600 mt-1 text-xs sm:text-sm font-medium">Servicios profesionales y diseños exclusivos para tus manos y pies.</p>
+            </div>
+            
+            <div class="p-5 h-96 overflow-y-auto mobile-scroll">
+                <div class="space-y-5">
+                    <!-- Servicio 1 -->
+                    <div class="flex items-center space-x-3.5 bg-white p-2.5 rounded-xl border border-gray-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=300&auto=format&fit=crop" alt="[Manicura Rusa / Combinada]" class="w-20 h-20 rounded-lg object-cover shadow-sm shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/b27976/FFFFFF?text=Manicura';">
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm">Manicura Rusa / Combinada</h4>
+                            <p class="text-xs text-gray-600 mt-0.5 leading-snug">Limpieza profunda de cutícula con torno para un acabado impecable y de larga duración.</p>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 2 -->
+                    <div class="flex items-center space-x-3.5 bg-white p-2.5 rounded-xl border border-gray-100 shadow-sm">
+                        <img src="https://i.postimg.cc/HLWws4Bz/imagen-2026-08-19-141855632.png" alt="[Uñas Acrílicas Esculturales]" class="w-20 h-20 rounded-lg object-cover shadow-sm shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/a0635f/FFFFFF?text=Acr%C3%ADlico';">
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm">Uñas Acrílicas Esculturales</h4>
+                            <p class="text-xs text-gray-600 mt-0.5 leading-snug">Extensión personalizada según tu estilo y largo deseado con acabados naturales o estilizados.</p>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div class="flex items-center space-x-3.5 bg-white p-2.5 rounded-xl border border-gray-100 shadow-sm">
+                        <img src="https://i.postimg.cc/fLKtq5pR/imagen-2026-08-19-180316675.png" alt="[Sistema Soft Gel / Press On]" class="w-20 h-20 rounded-lg object-cover shadow-sm shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/8c524e/FFFFFF?text=Soft+Gel';">
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm">Sistema Soft Gel</h4>
+                            <p class="text-xs text-gray-600 mt-0.5 leading-snug">Extensiones ligeras, resistentes y flexibles con ajuste perfecto sobre la uña natural.</p>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 4 -->
+                    <div class="flex items-center space-x-3.5 bg-white p-2.5 rounded-xl border border-gray-100 shadow-sm">
+                        <img src="https://i.postimg.cc/ZnnR7mrh/imagen-2026-08-19-180638824.png" alt="[Kapping Gel & Nivelación]" class="w-20 h-20 rounded-lg object-cover shadow-sm shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/6a3f3c/FFFFFF?text=Kapping';">
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm">Kapping Gel & Nivelación</h4>
+                            <p class="text-xs text-gray-600 mt-0.5 leading-snug">Baño protector de gel sobre la uña natural para fortalecerla y evitar quiebres.</p>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 5 -->
+                    <div class="flex items-center space-x-3.5 bg-white p-2.5 rounded-xl border border-gray-100 shadow-sm">
+                        <img src="https://i.postimg.cc/B6QQb37b/imagen-2026-08-19-180919505.png" alt="[Esmaltado Semipermanente]" class="w-20 h-20 rounded-lg object-cover shadow-sm shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/5b5b5b/FFFFFF?text=Gelish';">
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm">Esmaltado Semipermanente</h4>
+                            <p class="text-xs text-gray-600 mt-0.5 leading-snug">Color intenso con secado UV/LED de alta duración (hasta 21 días impecables).</p>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 6 -->
+                    <div class="flex items-center space-x-3.5 bg-white p-2.5 rounded-xl border border-gray-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?q=80&w=300&auto=format&fit=crop" alt="[Pedicura Spa Profunda]" class="w-20 h-20 rounded-lg object-cover shadow-sm shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/f0a0a0/FFFFFF?text=Pedicura';">
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm">Pedicura Spa Profunda</h4>
+                            <p class="text-xs text-gray-600 mt-0.5 leading-snug">Exfoliación, hidratación profunda y cuidado estético completo para tus pies.</p>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 7 -->
+                    <div class="flex items-center space-x-3.5 bg-white p-2.5 rounded-xl border border-gray-100 shadow-sm">
+                        <img src="https://i.postimg.cc/G36HSJY1/imagen-2026-08-19-141313386.png" alt="[Nail Art & Diseños]" class="w-20 h-20 rounded-lg object-cover shadow-sm shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/87CEEB/FFFFFF?text=Nail+Art';">
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm">Nail Art & Efectos</h4>
+                            <p class="text-xs text-gray-600 mt-0.5 leading-snug">Diseño a mano alzada, efecto ojo de gato, cromo, cristales, stamping y tendencia mate.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Servicio 8 -->
+                    <div class="flex items-center space-x-3.5 bg-white p-2.5 rounded-xl border border-gray-100 shadow-sm">
+                        <img src="https://i.postimg.cc/nr9x9h4h/imagen-2026-08-19-181121293.png" alt="[Retiro & Mantenimiento]" class="w-20 h-20 rounded-lg object-cover shadow-sm shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/b0c4de/FFFFFF?text=Mantenimiento';">
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm">Retiro & Mantenimiento</h4>
+                            <p class="text-xs text-gray-600 mt-0.5 leading-snug">Retiro seguro sin dañar tu uña natural y retoques de crecimiento oportunos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-4 bg-gray-50 border-t text-center">
+                <a href="https://wa.me/4433945792" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#8c524e] text-white font-bold py-3 px-4 rounded-xl shadow hover:bg-[#7a4642] active:transform active:scale-[0.98] transition-all text-sm">
+                    Agendar una Cita por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lógica para guardar contacto (vCard .vcf)
+            const vCardData = `BEGIN:VCARD
+VERSION:3.0
+N:Nails;Estudio Ambar;;;
+FN:Estudio Ambar Nails
+ORG:Estudio Ambar Nails
+TITLE:Especializada en Diseño de Uñas
+TEL;TYPE=WORK,VOICE:+1234567890
+TEL;TYPE=CELL,VOICE;PREF=1:+1234567890
+EMAIL:email@ejemplo.com
+URL:${window.location.href}
+NOTE:Especialistas en manicura, pedicura y diseño de uñas
+END:VCARD`;
+
+            const saveContactLink = document.getElementById('saveContact');
+            if (saveContactLink) {
+                saveContactLink.setAttribute('href', `data:text/vcard;charset=utf-8,${encodeURIComponent(vCardData)}`);
+                saveContactLink.setAttribute('download', 'EstudioAmbarNails.vcf');
+            }
+
+            // Elementos de Modales
+            const qrModal = document.getElementById('qrModal');
+            const installModal = document.getElementById('installModal');
+            const servicesModal = document.getElementById('servicesModal');
+
+            // Botones activadores
+            const shareBtn = document.getElementById('shareBtn');
+            const installTextBtn = document.getElementById('installTextBtn'); 
+            const servicesBtn = document.getElementById('servicesBtn');
+
+            // Botones de Cierre
+            const closeQrModal = document.getElementById('closeQrModal');
+            const closeInstallModal = document.getElementById('closeInstallModal');
+            const closeServicesModal = document.getElementById('closeServicesModal');
+            
+            const qrCodeImg = document.getElementById('qrCode');
+
+            // Abrir Modal de QR
+            if (shareBtn && qrModal && qrCodeImg) {
+                shareBtn.onclick = function(e) {
+                    e.preventDefault();
+                    const currentUrl = window.location.href;
+                    qrCodeImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(currentUrl)}`;
+                    qrModal.style.display = "flex";
+                };
+            }
+
+            // Abrir Modal de Instalación
+            if (installTextBtn && installModal) {
+                installTextBtn.onclick = function(e) {
+                    e.preventDefault();
+                    installModal.style.display = "flex";
+                };
+            }
+
+            // Abrir Modal de Servicios
+            if (servicesBtn && servicesModal) {
+                servicesBtn.onclick = function(e) {
+                    e.preventDefault();
+                    servicesModal.style.display = "flex";
+                };
+            }
+
+            // Funciones de cierre
+            if (closeQrModal) closeQrModal.onclick = () => qrModal.style.display = "none";
+            if (closeInstallModal) closeInstallModal.onclick = () => installModal.style.display = "none";
+            if (closeServicesModal) closeServicesModal.onclick = () => servicesModal.style.display = "none";
+
+            // Cerrar al hacer clic fuera del contenido del modal
+            window.onclick = function(event) {
+                if (event.target === qrModal) {
+                    qrModal.style.display = "none";
+                }
+                if (event.target === installModal) {
+                    installModal.style.display = "none";
+                }
+                if (event.target === servicesModal) {
+                    servicesModal.style.display = "none";
+                }
+            };
+        });
+    </script>
+</body>
+</html>
